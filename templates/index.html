@@ -1,8 +1,82 @@
 {% extends "base.html" %}
 {% block title %}
-Home
+Dashboard
 {% endblock %}
 {% block content %}
-<h1>Welcome, {{ current_user.username }}!</h1>
-<a href="/logout">Log Out</a>
+<style>
+    .head{
+        display: inline-block;
+        
+    }
+    #login{
+        margin-left: auto;
+    }
+</style>
+<div id="head">
+    <ul>
+        <li class="head"><h1>Welcome, {{ current_user.username }}!</h1></li>
+        <li class="head" id="login"><button ><a href="/logout">Log Out</a></button></li>
+    </ul>
+</div>
+<div class="container-fluid"></div>
+	<div class="row">
+		<div class="col-md-12">
+			<h3>
+				Dashboard
+			</h3>
+			<div class="btn-group" role="group">
+				 
+				<button class="btn btn-secondary" type="button">
+					Left
+				</button> 
+				<button class="btn btn-secondary" type="button">
+					Center
+				</button> 
+				<button class="btn btn-secondary" type="button">
+					Right
+				</button> 
+				<button class="btn btn-secondary" type="button">
+					Justify
+				</button>
+			</div>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>
+							#
+						</th>
+						<th>
+							Topic
+						</th>
+						<th>
+							Date
+						</th>
+						<th>
+							Status
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							{id}
+						</td>
+						<td>
+							{topic}
+						</td>
+						<td>
+							{date}
+						</td>
+						<td>
+							{status}
+						</td>
+					</tr>
+				</tbody>
+			</table> 
+			<button type="button" class="btn btn-success">
+				Refresh
+			</button>
+		</div>
+	</div>
+</div>
 {% endblock %}
